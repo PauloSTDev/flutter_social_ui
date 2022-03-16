@@ -20,6 +20,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 image: AssetImage("assets/images/login_background.jpg",),
                 fit: BoxFit.cover,
               ),
+              Text("FRENZY",
+                style: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                  fontSize: 34.0,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.0
+                ),
+              ),
             ],
           ),
         ),
