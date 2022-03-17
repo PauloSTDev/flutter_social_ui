@@ -28,6 +28,33 @@ class _LoginScreenState extends State<LoginScreen> {
                   letterSpacing: 1.0
                 ),
               ),
+              SizedBox(height: 10.0,),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical:  10.0, horizontal: 20.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.symmetric(vertical: 15.0),
+                    fillColor: Colors.white,
+                    filled: true,
+                    hintText: "Username",
+                    prefixIcon: Icon(Icons.account_box, size: 30.0,),
+                  ),
+                ),
+              ),
+              SizedBox(height: 10.0,),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical:  10.0, horizontal: 20.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.symmetric(vertical: 15.0),
+                    fillColor: Colors.white,
+                    filled: true,
+                    hintText: "Password",
+                    prefixIcon: Icon(Icons.lock, size: 30.0,),
+                  ),
+                  obscureText: true,
+                ),
+              ),
             ],
           ),
         ),
