@@ -67,7 +67,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   obscureText: true,
                 ),
               ),
-              SizedBox(height: 40.0,),
+              SizedBox(
+                height: 40.0,
+              ),
               GestureDetector(
                 onTap: () {},
                 child: Container(
@@ -81,10 +83,32 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text(
                     "Login",
                     style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 22.0,
-                        fontWeight: FontWeight.w600,
-                        letterSpacing: 1.5,
+                      color: Colors.white,
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                ),
+              ),
+              //Expanded usado para fazer com que fique lá embaixo, como um Footer
+              Expanded(
+                child: Align(
+                  alignment: FractionalOffset.bottomCenter,
+                  child: GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      alignment: Alignment.center,
+                      color: Theme.of(context).primaryColor,
+                      height: 80.0,
+                      child: Text(
+                        "Don't have an account? Sign up",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 20.0,
+                        ),
+                      ),
                     ),
                   ),
                 ),
