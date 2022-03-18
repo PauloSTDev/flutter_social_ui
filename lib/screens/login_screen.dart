@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 40.0,
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomeScreen())),
                 child: Container(
                   margin: EdgeInsets.symmetric(horizontal: 60.0),
                   height: 45.0,
@@ -101,7 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Align(
                   alignment: FractionalOffset.bottomCenter,
                   child: GestureDetector(
-                    onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomeScreen())),
+                    onTap: () {},
                     child: Container(
                       alignment: Alignment.center,
                       color: Theme.of(context).primaryColor,
