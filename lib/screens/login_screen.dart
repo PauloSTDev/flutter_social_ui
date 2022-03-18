@@ -76,6 +76,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 40.0,
               ),
               GestureDetector(
+                //Navigator.pushReplacement faz com que não seja possivel
+                //voltar a screen anterior, ou seja vai para a Home Screen
+                //desabilita botão de voltar na AppBar e não é mais possivel
+                //voltar para a Login Screen
                 onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomeScreen())),
                 child: Container(
                   margin: EdgeInsets.symmetric(horizontal: 60.0),
