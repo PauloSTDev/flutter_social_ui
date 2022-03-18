@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_social_ui/widgets/following_users.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -6,15 +7,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen>
-with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin {
   TabController _tabController;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(
-        length: 2,
-        vsync: this,
+      length: 2,
+      vsync: this,
     );
   }
 
@@ -31,9 +32,9 @@ with SingleTickerProviderStateMixin {
         title: Text(
           "Frenzy",
           style: TextStyle(
-              color: Theme.of(context).primaryColor,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 10.0,
+            color: Theme.of(context).primaryColor,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 10.0,
           ),
         ),
         bottom: TabBar(
@@ -42,11 +43,20 @@ with SingleTickerProviderStateMixin {
           labelColor: Theme.of(context).primaryColor,
           labelStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600),
           tabs: [
-          Tab(text: "Trending",),
-          Tab(text: "Latest",),
-        ],
-        unselectedLabelStyle:  TextStyle(fontSize: 18.0),
+            Tab(
+              text: "Trending",
+            ),
+            Tab(
+              text: "Latest",
+            ),
+          ],
+          unselectedLabelStyle: TextStyle(fontSize: 18.0),
         ),
+      ),
+      body: ListView(
+        children: [
+          FollowingUsers(),
+        ],
       ),
     );
   }
