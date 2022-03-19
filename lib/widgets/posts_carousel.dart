@@ -35,6 +35,10 @@ class PostsCarousel extends StatelessWidget {
             ),
           ),
         ),
+        Container(
+          padding: EdgeInsets.all(12.0),
+          height: 110.0,
+        ),
       ],
     );
   }
