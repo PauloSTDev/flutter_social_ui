@@ -36,9 +36,9 @@ class PostsCarousel extends StatelessWidget {
           ),
         ),
         Positioned(
-          left: 0.0,
-          bottom: 0.0,
-          right: 0.0,
+          left: 10.0,
+          bottom: 10.0,
+          right: 10.0,
           child: Container(
             padding: EdgeInsets.all(12.0),
             height: 110.0,
@@ -47,7 +47,38 @@ class PostsCarousel extends StatelessWidget {
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(15.0),
                   bottomRight: Radius.circular(15.0),
-                )),
+                ),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(post.title),
+                Text(post.location),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.favorite,
+                          color: Colors.red,
+                        ),
+                        Text(post.likes.toString())
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Icon(Icons.comment,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        Text(post.comments.toString())
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ],
