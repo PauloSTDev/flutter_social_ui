@@ -43,18 +43,32 @@ class PostsCarousel extends StatelessWidget {
             padding: EdgeInsets.all(12.0),
             height: 110.0,
             decoration: BoxDecoration(
-                color: Colors.white54,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(15.0),
-                  bottomRight: Radius.circular(15.0),
-                ),
+              color: Colors.white54,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(15.0),
+                bottomRight: Radius.circular(15.0),
+              ),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(post.title),
-                Text(post.location),
+                Text(
+                  post.title,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24.0,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Text(post.location,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 18.0,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+                SizedBox(height: 6.0,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -64,15 +78,25 @@ class PostsCarousel extends StatelessWidget {
                           Icons.favorite,
                           color: Colors.red,
                         ),
-                        Text(post.likes.toString())
+                        SizedBox(width: 6.0,),
+                        Text(post.likes.toString(),
+                          style: TextStyle(
+                            fontSize: 18.0,
+                          ),
+                        ),
                       ],
                     ),
                     Row(
                       children: [
-                        Icon(Icons.comment,
+                        Icon(
+                          Icons.comment,
                           color: Theme.of(context).primaryColor,
                         ),
-                        Text(post.comments.toString())
+                        Text(post.comments.toString(),
+                          style: TextStyle(
+                            fontSize: 18.0,
+                          ),
+                        ),
                       ],
                     ),
                   ],
