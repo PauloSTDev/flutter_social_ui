@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_social_ui/data/data.dart';
+import 'package:flutter_social_ui/screens/home_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
+  //Build para criação de opções do Drawer, parâmetros serão
+  //Um ícone, um titulo e uma função para cada build.
+  _buildDrawerOption(Icon icon, String title, Function onTap) {
+    return ListTile(
+      leading: icon,
+      title: Text(
+        title,
+        style: TextStyle(fontSize: 20.0),
+      ),
+      onTap: onTap,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -19,6 +33,7 @@ class CustomDrawer extends StatelessWidget {
                 bottom: 20.0,
                 left: 20.0,
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
                       height: 100.0,
@@ -27,18 +42,21 @@ class CustomDrawer extends StatelessWidget {
                         shape: BoxShape.circle,
                         border: Border.all(
                           width: 3.0,
-                          color: Theme.of(context).primaryColor,
+                          color: Colors.white,
                         ),
                       ),
                       child: ClipOval(
-                        child: Image(image: AssetImage(
-                          currentUser.profileImageUrl,
-                        ),
+                        child: Image(
+                          image: AssetImage(
+                            currentUser.profileImageUrl,
+                          ),
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
-                    SizedBox(width: 6.0,),
+                    SizedBox(
+                      width: 6.0,
+                    ),
                     Text(
                       currentUser.name,
                       style: TextStyle(
@@ -53,6 +71,11 @@ class CustomDrawer extends StatelessWidget {
               ),
             ],
           ),
+          _buildDrawerOption(
+              Icon(Icons.dashboard),
+              "Home",
+              () => Navigator.pushReplacement(
+                  context, MaterialPageRoute(builder: (_) => HomeScreen())))
         ],
       ),
     );
