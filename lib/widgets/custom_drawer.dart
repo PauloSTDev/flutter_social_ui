@@ -84,12 +84,18 @@ class CustomDrawer extends StatelessWidget {
           _buildDrawerOption(Icon(Icons.location_on), "Map", () {}),
           _buildDrawerOption(Icon(Icons.account_circle), "Your Profile", () {}),
           _buildDrawerOption(Icon(Icons.settings), "Settings", () {}),
-          _buildDrawerOption(
-            Icon(Icons.directions_run),
-            "Logout",
-            () => Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (_) => LoginScreen()),
+          
+          Expanded(
+            child: Align(
+              alignment: FractionalOffset.bottomCenter,
+              child: _buildDrawerOption(
+                Icon(Icons.directions_run),
+                "Logout",
+                    () => Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (_) => LoginScreen()),
+                ),
+              ),
             ),
           ),
         ],
