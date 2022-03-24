@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_social_ui/data/data.dart';
 import 'package:flutter_social_ui/screens/home_screen.dart';
+import 'package:flutter_social_ui/screens/login_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   //Build para criação de opções do Drawer, parâmetros serão
@@ -72,10 +73,25 @@ class CustomDrawer extends StatelessWidget {
             ],
           ),
           _buildDrawerOption(
-              Icon(Icons.dashboard),
-              "Home",
-              () => Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (_) => HomeScreen())))
+            Icon(Icons.dashboard),
+            "Home",
+            () => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) => HomeScreen()),
+            ),
+          ),
+          _buildDrawerOption(Icon(Icons.chat), "Chat", () {}),
+          _buildDrawerOption(Icon(Icons.location_on), "Map", () {}),
+          _buildDrawerOption(Icon(Icons.account_circle), "Your Profile", () {}),
+          _buildDrawerOption(Icon(Icons.settings), "Settings", () {}),
+          _buildDrawerOption(
+            Icon(Icons.directions_run),
+            "Logout",
+            () => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) => LoginScreen()),
+            ),
+          ),
         ],
       ),
     );
