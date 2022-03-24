@@ -38,6 +38,16 @@ class CustomDrawer extends StatelessWidget {
                         ),
                       ),
                     ),
+                    SizedBox(width: 6.0,),
+                    Text(
+                      currentUser.name,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.5,
+                      ),
+                    ),
                   ],
                 ),
               ),
