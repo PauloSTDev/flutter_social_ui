@@ -87,6 +87,8 @@ class CustomDrawer extends StatelessWidget {
           
           Expanded(
             child: Align(
+              //Podemos mudar a posição da opção colocando
+              //fractionOffset.posicaoDesejada
               alignment: FractionalOffset.bottomCenter,
               child: _buildDrawerOption(
                 Icon(Icons.directions_run),
