@@ -88,7 +88,7 @@ class CustomDrawer extends StatelessWidget {
             "Your Profile",
             () => Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (_) => ProfileScreen()),
+              MaterialPageRoute(builder: (_) => ProfileScreen(user: currentUser,)),
             ),
           ),
           _buildDrawerOption(Icon(Icons.settings), "Settings", () {}),
