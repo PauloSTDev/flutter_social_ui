@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_social_ui/models/user_model.dart';
 import 'package:flutter_social_ui/widgets/custom_drawer.dart';
+import 'package:flutter_social_ui/widgets/posts_carousel.dart';
 import 'package:flutter_social_ui/widgets/profile_clipper.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -14,6 +15,16 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  PageController _yourPostsPageController;
+  PageController _favoritesPageController;
+
+  @override
+  void initState() {
+    super.initState();
+    _yourPostsPageController = PageController(initialPage: 0, viewportFraction: 0.8);
+    _favoritesPageController = PageController(initialPage: 0, viewportFraction: 0.8);
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -123,6 +134,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ],
                 ),
               ],
+            ),
+            PostsCarousel(
+              pageController: _yourPostsPageController,
+              title: "Your Posts",
+              posts: widget.user.posts,
+            ),
+            PostsCarousel(
+              pageController: _favoritesPageController,
+              title: "Favorites",
+              posts: widget.user.favorites,
             ),
           ],
         ),
