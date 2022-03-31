@@ -145,6 +145,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               title: "Favorites",
               posts: widget.user.favorites,
             ),
+            SizedBox(height: 50.0,),
           ],
         ),
       ),
