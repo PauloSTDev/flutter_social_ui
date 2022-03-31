@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_social_ui/models/user_model.dart';
 import 'package:flutter_social_ui/widgets/custom_drawer.dart';
@@ -84,6 +82,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Column(
                   children: [
@@ -97,6 +96,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     SizedBox(height: 2.0),
                     Text(
                       widget.user.following.toString(),
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text(
+                      "Followers",
+                      style: TextStyle(
+                        color: Colors.black54,
+                        fontSize: 22.0,
+                      ),
+                    ),
+                    SizedBox(height: 2.0),
+                    Text(
+                      widget.user.followers.toString(),
                       style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.w600,
